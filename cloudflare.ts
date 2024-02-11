@@ -2,7 +2,7 @@
 export default {
   async fetch(request, env) {
     try {
-      const OPENAI_API_HOST = "generativelanguage.googleapis.com";
+      const GEMINI_API_HOST = "generativelanguage.googleapis.com";
       const oldUrl = new URL(request.url);
 
       if (oldUrl.pathname === "/") {
@@ -10,7 +10,7 @@ export default {
       }
 
       const newUrl = new URL(request.url);
-      newUrl.hostname = OPENAI_API_HOST;
+      newUrl.hostname = GEMINI_API_HOST;
 
       const modifiedRequest = new Request(newUrl, {
         method: request.method,

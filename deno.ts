@@ -1,8 +1,8 @@
-const OPENAI_API_HOST = "generativelanguage.googleapis.com";
+const GEMINI_API_HOST = "generativelanguage.googleapis.com";
 
 Deno.serve(async (request) => {
   const url = new URL(request.url);
-  url.host = OPENAI_API_HOST;
+  url.host = GEMINI_API_HOST;
 
   const newRequest = new Request(url.toString(), {
     headers: request.headers,
